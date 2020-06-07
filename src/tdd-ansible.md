@@ -1,9 +1,10 @@
 # Test-Driven Ansible with Molecule
 ## Introduction
 
-*This is based on an old post I wrote back in 2017 which has been
-updated to be compatible with the latest versions of tools as of June
-2020*
+**This is based on an old post I wrote back in 2017 which has been
+updated to be compatible with the latest versions of tools as of
+June 2020. I suspect attitudes towards testing within the Ansible
+community have changed since I originally wrote this.**
 
 As a Sys Admin type who likes to automate things I've learnt several
 configuration management tools over the years.  The first one I learnt
