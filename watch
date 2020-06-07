@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while :
+do
+    find src -type f ! -path '*/.*' |
+    #entr -d "./ssg" . src dst 'https://hashbangwallop.com'
+    entr -d make 
+done
