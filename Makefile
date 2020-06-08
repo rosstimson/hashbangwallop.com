@@ -4,7 +4,7 @@ build: dst/*
 
 dst/*:
 	./ssg src dst '#!/Hash/Bang/Wallop' 'https://hashbangwallop.com'
-	./rssg src/index.md '#!/Hash/Bang/Wallop' > dst/rss.xml
+	./rssg src/index.html '#!/Hash/Bang/Wallop' > dst/rss.xml
 
 lint:
 	yarn stylelint "src/css/*.css"
@@ -15,6 +15,11 @@ lint-fix:
 publish:
 	aws --profile rosstimson s3 sync dst s3://hashbangwallop.com/
 	aws --profile rosstimson cloudfront create-invalidation --distribution-id E1ZL32K36QWTLW --paths '/*'
+
+spy:
+	while true ; do \
+		find src -type f ! -path '*/.*' | entr -d make ; \
+	done
 
 # For some reason when run via 'make' the hidden file doesn't get
 # remove via 'rm -rf dst/*' even though it normally would
