@@ -39,89 +39,95 @@ header i {
   background-color: #111;
 }
 
-.homepage-intro {
+.intro {
   font-size: 2.8rem;
-}
-
-.homepage-intro p {
   font-style: italic;
 }
 
-  h1 {
-    font-weight: 700;
-    font-size: 4.7rem;
-    line-height: 7rem;
-  }
 
-  h2 {
-    font-size: 3.7rem;
-    line-height: 6.2rem;
-  }
+h1 {
+  font-weight: 700;
+  font-size: 4.7rem;
+  line-height: 7rem;
+}
 
-  h3 {
-    font-size: 2.9rem;
-    line-height: 5.1rem;
-  }
+h2 {
+  font-size: 3.7rem;
+  line-height: 6.2rem;
+}
 
-  h4 {
-    font-size: 2.3rem;
-    line-height: 4.2rem;
-  }
+h3 {
+  font-size: 2.9rem;
+  line-height: 5.1rem;
+}
 
-  ul {
-    margin-top: 0.6rem;
-    padding: 0 4.6rem;
-    list-style: square;
-  }
+h4 {
+  font-size: 2.3rem;
+  line-height: 4.2rem;
+}
 
-  ol {
-    padding: 0 4.6rem;
-  }
+ul {
+  margin-top: 0.6rem;
+  padding: 0 4.6rem;
+  list-style: square;
+}
 
-  li,
-  dt {
-    margin-top: 0.6rem;
-    padding: 0;
-  }
+ol {
+  padding: 0 4.6rem;
+}
 
-  dd {
-    margin: 0;
-    font-style: italic;
-  }
+li,
+dt {
+  margin-top: 2.9rem;
+  padding: 0;
+}
 
-  pre {
-    padding: 10px 18px;
-    overflow: auto;
-    background-color: #e6e6e6;
-    border-left: 5px solid #ccc;
-  }
+dd {
+  margin: 0;
+}
 
-  code {
-    font-size: 1.4rem;
-    font-family: monospace;
-    line-height: 2.9rem;
-  }
+.homepage-nav {
+  margin-top: 78px;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+.homepage-link {
+  font-size: 3.7rem;
+  line-height: 6.2rem;
+}
 
-  hr {
-    display: none;
-  }
+pre {
+  padding: 10px 18px;
+  overflow: auto;
+  background-color: #e6e6e6;
+  border-left: 5px solid #ccc;
+}
 
-  footer {
-    margin-top: 57px;
-    padding-top: 14px;
-    font-size: 1.4rem;
-    line-height: 2.9rem;
-    border-top: 1.2px solid #111;
-  }
+code {
+  font-size: 1.4rem;
+  font-family: monospace;
+  line-height: 2.9rem;
+}
 
-  .hidden {
-    display: none;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  display: none;
+}
+
+footer {
+  margin-top: 57px;
+  padding-top: 14px;
+  font-size: 1.4rem;
+  line-height: 2.9rem;
+  border-top: 1.2px solid #111;
+}
+
+.hidden {
+  display: none;
+}
 
 @media screen and (max-width: 380px) {
   html { font-size: 56%; }
