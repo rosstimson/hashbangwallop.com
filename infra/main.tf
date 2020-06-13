@@ -20,8 +20,7 @@ provider "aws" {
   version = "~> 2.62"
 }
 
-# Cloudfront ACM certs must exist in US-East-1 for use with API
-# Gateway custom DNS.
+# Cloudfront ACM certs must exist in US-East-1 for use with Cloudfront.
 provider "aws" {
   alias   = "acm"
   region  = "us-east-1"
