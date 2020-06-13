@@ -16,6 +16,9 @@ publish:
 	aws --profile rosstimson s3 sync dst s3://hashbangwallop.com/
 	aws --profile rosstimson cloudfront create-invalidation --distribution-id E1ZL32K36QWTLW --paths '/*'
 
+serve:
+	python3 -m http.server 8000 --directory dst
+
 spy:
 	while true ; do \
 		find src -type f ! -path '*/.*' | entr -d make ; \
