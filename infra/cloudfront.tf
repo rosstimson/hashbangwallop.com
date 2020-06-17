@@ -18,6 +18,7 @@ resource "aws_cloudfront_distribution" "website_cdn" {
   logging_config {
     include_cookies = false
     bucket          = aws_s3_bucket.website_logs.bucket_domain_name
+    prefix          = "cf-logs/"
   }
 
   origin {

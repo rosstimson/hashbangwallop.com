@@ -46,11 +46,12 @@ POLICY
 resource "aws_kms_key" "website_logs_encryption_key" {
   description             = "Used to encrypt ${var.domain} website logs bucket"
   deletion_window_in_days = 10
+  policy                  = file("policies/logs-bucket-kms-key-policy.json")
 }
 
 resource "aws_s3_bucket" "website_logs" {
   bucket = "${var.domain}-logs"
-  acl    = "private"
+  acl    = "log-delivery-write"
 
   server_side_encryption_configuration {
     rule {
