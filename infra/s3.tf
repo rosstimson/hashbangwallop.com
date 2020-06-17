@@ -47,6 +47,7 @@ resource "aws_kms_key" "website_logs_encryption_key" {
   description             = "Used to encrypt ${var.domain} website logs bucket"
   deletion_window_in_days = 10
   policy                  = file("policies/logs-bucket-kms-key-policy.json")
+  enable_key_rotation     = true
 }
 
 resource "aws_s3_bucket" "website_logs" {
