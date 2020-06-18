@@ -52,7 +52,21 @@ resource "aws_kms_key" "website_logs_encryption_key" {
 
 resource "aws_s3_bucket" "website_logs" {
   bucket = "${var.domain}-logs"
-  acl    = "log-delivery-write"
+
+  # My account
+  grant {
+    id          = "${data.aws_canonical_user_id.current_user.id}"
+    type        = "CanonicalUser"
+    permissions = ["FULL_CONTROL"]
+  }
+
+  # awslogsdelivery account
+  # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html
+  grant {
+    id          = "c4c1ede66af53448b93c283ce9448c4ba468c9432aa01d700d3878632f77d2d0"
+    type        = "CanonicalUser"
+    permissions = ["FULL_CONTROL"]
+  }
 
   server_side_encryption_configuration {
     rule {
