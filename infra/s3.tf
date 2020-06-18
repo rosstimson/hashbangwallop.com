@@ -55,7 +55,7 @@ resource "aws_s3_bucket" "website_logs" {
 
   # My account
   grant {
-    id          = "${data.aws_canonical_user_id.current_user.id}"
+    id          = data.aws_canonical_user_id.current_user.id
     type        = "CanonicalUser"
     permissions = ["FULL_CONTROL"]
   }
@@ -89,5 +89,5 @@ resource "aws_s3_bucket_public_access_block" "lockdown_website_logs" {
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
-  restrict_public_buckets = true
+  restrict_public_buckets = false
 }
