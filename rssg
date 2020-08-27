@@ -117,13 +117,13 @@ rel_to_abs_urls() {
 
 
 date_rfc_822() {
-	if test "$(uname -s)" = 'Linux'
+	if test "$(uname -s)" = 'OpenBSD'
 	then
-		date -d "$(echo "$1"| tr -cd '[:digit:]')" \
-			 '+%a, %d %b %Y %H:%M:%S %z'
-	else
 		date -j '+%a, %d %b %Y %H:%M:%S %z' \
 			 "$(echo "$1"| tr -cd '[:digit:]')0000"
+	else # Linux / CoreUtils 'date'
+		date -d "$(echo "$1"| tr -cd '[:digit:]')" \
+			 '+%a, %d %b %Y %H:%M:%S %z'
 	fi
 }
 
